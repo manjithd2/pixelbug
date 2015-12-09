@@ -15,7 +15,7 @@ class PhotoController extends Controller
 
     	Photo::create($request->all());
 
-    	  $request->file('photo')->move($request->album_name.'/', $request->photo_name.'.jpg');
+    	  $request->file('photo')->move('photos/'.$request->album_name.'/', $request->photo_name.'.jpg');
  		
  		return redirect('pixelbug/loggedin/add');
 
